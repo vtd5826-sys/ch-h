@@ -1087,4 +1087,18 @@ ion.Out), {
 =9Tween(MainStroke, fade=5Fin, { Transparency =3D 0.2 })
 =9Tween(CloseBtn, fade=5Fin, { ImageTransparency =3D 0 })
 =9set=5Ffade(0)
+
+   spawn(function()
+=9=9wait(0.35)
+=9=9if closed or validating then
+=9=9=9return
+=9=9end
+=9=9local from=5Ffile =3D isfile(Config.File) and readfile(Config.File)
+=9=9local saved =3D from=5Ffile or (script=5Fkey ~=3D nil and script=5Fkey=
+ ~=3D "" and script=5Fkey) or nil
+=9=9if saved then
+=9=9=9ValidateKey(saved, { from=5Fsaved =3D from=5Ffile and true or false =
+})
+=9=9end
+=9end)
 end
